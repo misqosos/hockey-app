@@ -1,8 +1,7 @@
 DROP DATABASE IF EXISTS icehockey;
-CREATE DATABASE icehockey;
+CREATE DATABASE iF NOT EXISTS icehockey;
 
-DROP TABLE IF EXISTS icehockey.bio;
-CREATE TABLE icehockey.bio(
+CREATE TABLE IF NOT EXISTS icehockey.bio(
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `agility` INT(10),
   `stamina` INT(10),
@@ -16,8 +15,7 @@ CREATE TABLE icehockey.bio(
   PRIMARY KEY(`id`)
 );
 
-DROP TABLE IF EXISTS icehockey.gear;
-CREATE TABLE icehockey.gear(
+CREATE TABLE IF NOT EXISTS icehockey.gear(
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   helmet VARCHAR(20),
   skates VARCHAR(20),
@@ -35,8 +33,7 @@ CREATE TABLE icehockey.gear(
   PRIMARY KEY(`id`)
 );
 
-DROP TABLE IF EXISTS icehockey.player;
-CREATE TABLE icehockey.player(
+CREATE TABLE IF NOT EXISTS icehockey.player(
   `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `firstName` VARCHAR(20),
   `surname` VARCHAR(20),
@@ -46,7 +43,7 @@ CREATE TABLE icehockey.player(
 );
 
 ALTER TABLE icehockey.gear
-ADD FOREIGN KEY (ownerId) REFERENCES icehockey.player(id) ON UPDATE CASCADE;
+ADD FOREIGN KEY IF NOT EXISTS (ownerId) REFERENCES icehockey.player(id) ON UPDATE CASCADE;
 
 ALTER TABLE icehockey.bio
-ADD FOREIGN KEY (ownerId) REFERENCES icehockey.player(id) ON UPDATE CASCADE;
+ADD FOREIGN KEY IF NOT EXISTS (ownerId) REFERENCES icehockey.player(id) ON UPDATE CASCADE;
