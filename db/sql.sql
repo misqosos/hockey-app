@@ -1,0 +1,52 @@
+DROP DATABASE IF EXISTS icehockey;
+CREATE DATABASE icehockey;
+
+DROP TABLE IF EXISTS icehockey.bio;
+CREATE TABLE icehockey.bio(
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `agility` INT(10),
+  `stamina` INT(10),
+  `speed` INT(10),
+  `height` INT(10),
+  `weight` INT(10),
+  `side` VARCHAR(200),
+  `position` VARCHAR(200),
+  `sponsor` VARCHAR(200),
+  ownerId INT(10) UNSIGNED,
+  PRIMARY KEY(`id`)
+);
+
+DROP TABLE IF EXISTS icehockey.gear;
+CREATE TABLE icehockey.gear(
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  helmet VARCHAR(20),
+  skates VARCHAR(20),
+  stick VARCHAR(20),
+  gloves VARCHAR(20),
+  shinPads VARCHAR(20),
+  elbowPads VARCHAR(20),
+  mouthGuard VARCHAR(20),
+  shoulderPads VARCHAR(20),
+  neckGuard VARCHAR(20),
+  jersey VARCHAR(20),
+  pants VARCHAR(20),
+  jockstrap VARCHAR(20),
+  ownerId INT(10) UNSIGNED,
+  PRIMARY KEY(`id`)
+);
+
+DROP TABLE IF EXISTS icehockey.player;
+CREATE TABLE icehockey.player(
+  `id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `firstName` VARCHAR(20),
+  `surname` VARCHAR(20),
+  `bioId` INT(10) UNSIGNED,
+  `gearId` INT(10) UNSIGNED,
+  PRIMARY KEY(`id`)
+);
+
+ALTER TABLE icehockey.gear
+ADD FOREIGN KEY (ownerId) REFERENCES icehockey.player(id) ON UPDATE CASCADE;
+
+ALTER TABLE icehockey.bio
+ADD FOREIGN KEY (ownerId) REFERENCES icehockey.player(id) ON UPDATE CASCADE;

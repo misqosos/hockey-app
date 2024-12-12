@@ -1,0 +1,26 @@
+
+.gear-form-wrapper {
+    position: relative;
+    width: max-content;
+}
+
+.fields-wrapper {
+    position: relative;
+    line-height: 1.5;
+}
+
+.field {
+    position: relative;
+    display: flex;
+}
+
+.field-label {
+    display: flex;
+    flex: 50%;
+    align-items: center;
+}
+
+.field-input {
+    flex: 50%;
+    text-align: center;
+}
