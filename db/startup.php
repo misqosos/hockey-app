@@ -7,7 +7,7 @@ if (!isset($_COOKIE["startupSqLExecuted"])) {
   
     if ($sqlAffection >= 0) {
       setcookie("startupSqlExecuted", true, time() + (86400 * 30), "/");
-    } else { echo "DB and tables not created"; }
+    } else { echo "DB and tables not created."; }
   }
 
 ?>
