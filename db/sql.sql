@@ -1,4 +1,4 @@
-DROP DATABASE IF EXISTS icehockey;
+
 CREATE DATABASE iF NOT EXISTS icehockey;
 
 CREATE TABLE IF NOT EXISTS icehockey.bio(
