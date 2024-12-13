@@ -1,4 +1,6 @@
-<?php require_once("db/startup.php"); ?>
+<?php 
+    require_once("db/onStartupInfo.php");
+?>
 <!doctype html>
   <html lang="en">
   <head>
