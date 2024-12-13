@@ -13,7 +13,7 @@ if (!isset($_COOKIE["startupSqlExecuted"])) {
 ?>
 
 <script>
-    let interval = setInterval(function (){
+    let timeout = setTimeout(function (){
         let dbInfo = document.getElementById("dbInfo");
         if (dbInfo) {
             dbInfo.style.display = "none";
