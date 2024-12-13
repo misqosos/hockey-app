@@ -13,13 +13,6 @@ $gear = $gearService->getLastRecord();
 $bio = $bioService->getLastRecord();
 $player = $playerService->getLastRecord();
 
-// $savedPlayer = new Player(
-//     $player["firstName"],
-//     $player["surname"], 
-//     $gearService->mapToEntity($gear), 
-//     $bioService->mapToEntity($bio)
-// );
-
 echo $player["firstName"] . " " . $player["surname"] . "<br>";
 echo "<h3>Player</h3>";
 foreach ($player as $key => $value) {
@@ -35,3 +28,5 @@ foreach ($gear as $key => $value) {
 }
 
 ?>
+<br>
+<a href="/"><button>Create new player</button></a><br><br><br><br>
