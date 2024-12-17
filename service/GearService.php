@@ -22,7 +22,7 @@ class GearService {
         $gearEntity->setJersey($gear["jersey"]);
         $gearEntity->setPants($gear["pants"]);
         $gearEntity->setJockstrap($gear["jockstrap"]);
-        $gearEntity->setOwnerId($gear["ownerId"]);
+        $gear["ownerId"] == 0 || $gear["ownerId"] == "" ? $gearEntity->setOwnerId(null) : $gearEntity->setOwnerId($gear["ownerId"]);
         return $gearEntity;
     }
 
@@ -74,7 +74,7 @@ class GearService {
                     :pants,
                     :jockstrap,
                     :ownerId
-                )';
+                );';
         
         $stmt = DbConnection::getDatabaseConnection()->prepare($sql); 
 
@@ -91,7 +91,7 @@ class GearService {
         $stmt->bindValue(':pants', $gear->getPants());
         $stmt->bindValue(':jockstrap', $gear->getJockstrap());
         $stmt->bindValue(':ownerId', $gear->getOwnerId());
-        
+
         return $stmt->execute();
     }
     

@@ -17,7 +17,7 @@ class BioService {
         $bioEntity->setSide($bio["side"]);
         $bioEntity->setPosition($bio["position"]);
         $bioEntity->setSponsor($bio["sponsor"]);
-        $bioEntity->setOwnerId($bio["ownerId"]);
+        $bio["ownerId"] == 0 || $bio["ownerId"] == "" ? $bioEntity->setOwnerId(null) : $bioEntity->setOwnerId($bio["ownerId"]);
         return $bioEntity;
     }
 
