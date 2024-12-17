@@ -9,11 +9,11 @@
     <div class="fields-wrapper">
         <div class="field">
             <label for="firstName" class="field-label">First name</label>
-            <input type="text" name="firstName" class="field-input">
+            <input type="text" name="firstName" class="field-input" required>
         </div>
         <div class="field">
             <label for="surname" class="field-label">Surname</label>
-            <input type="text" name="surname" class="field-input">
+            <input type="text" name="surname" class="field-input" required>
         </div>
         <input type="hidden" name="gearId">
         <input type="hidden" name="bioId">
